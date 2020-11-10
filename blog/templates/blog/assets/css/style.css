@@ -1,0 +1,174 @@
+body{
+/*стиль шрифта с гугл-фонт*/
+    font-family: 'Dosis', sans-serif;
+ /*размер шрифта*/
+    font-size: 15px;
+/*цвет шрифта*/
+    color: white;
+/*межстрочный интервал*/
+    line-height: 1.6;
+/*Устанавливает величину отступа от каждого края элемента*/
+    margin: 0;
+}
+
+
+*,
+*:after,
+*:before {
+/* Ширина блока с полями */
+    box-sizing: border-box;
+}
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+}
+
+
+.container{
+    width: 100%;
+    max-width: 1200px;
+    /*выравниваем по центру*/
+    margin: 0 auto;
+}
+
+
+
+.header{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-top: 30px;
+/*Каждый элемент может находиться как ниже, так и выше других объектов веб-страницы, их размещением по z-оси и управляет z-index*/
+    z-index: 1000;
+}
+.header_inner{
+/*Внутренние div-ы выстраиваются в ряд (вдоль главной оси) колонками одинаковой высоты, независимо от содержимого.*/
+    display:flex;
+/*Определяет, как браузер распределяет пространство вокруг флекс-элементов вдоль главной оси контейнера*/
+    justify-content: space-between;
+    align-items: center;
+}
+.header_logo{
+    font-size: 30px;
+    font-weight: 700;
+    color:white;
+}
+
+
+.nav{
+    font-size: 28px;
+/*текст весь заглавными буквами*/
+    text-transform: uppercase;
+}
+.nav_link{
+/*При этом его внутренняя часть форматируется как блочный элемент, а сам элемент — как встроенный.*/
+    display: inline-block;
+/*Выравнивает содержимое ячейки по ее верхнему краю*/
+    vertical-align: top;
+    color: white;
+/*подчеркивание снизу уберем*/
+    text-decoration: none;
+/*плавный переход*/
+    transition: color .1s linear;
+    margin: 0 10px;
+/*пишем потому что этот касс родитель. и наш nav_link будет выравниваться относительно родителя*/
+    position: relative;
+}
+.nav_link:after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: papayawhip;
+    position: absolute;
+    top:100%;
+    left:0;
+    z-index: 1;
+/*Свойство CSS3 opacity позволяет делать прозрачным тот или иной элемент сайта*/
+    opacity: 0;
+     transition: color 0.1s linear;
+}
+.nav_link:hover{
+/*чтобы при наведение она горела*/
+    color:papayawhip;
+}
+.nav_link:hover:after{
+    opacity:1;
+}
+
+
+.intro{
+    width: 100%;
+/*всю высоту экрана юзера*/
+    height: 100vh;
+    background: url(../imges/intro.jpg) center no-repeat;
+/*чтобы покрывала всю страницу*/
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+
+
+.intro_inner{
+    width:100%;
+    max-width: 880px;
+    margin:0 auto;
+    color:white;
+}
+.intro_suptitle{
+    font-family: 'Dosis', sans-serif;
+    font-size: 50px;
+    color:white;
+    text-align: center;
+}
+.intro_title{
+    font-size:65px; 
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1;
+}
+.intro_title:after{
+    content:"";
+    display: block;
+    height:3px;
+    width:60px; 
+    background-color: white;
+    margin: 60px auto 0;
+}
+
+.slider{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+.slider_inner{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.slider_item{
+    width: 20%;
+    font-size: 28px;
+    color:white;
+    text-transform: uppercase;
+    padding: 2px 0;
+    border-top: 2px solid white;
+    opacity: .99;
+}
+.slider_numbers{
+    font-size: 28px;
+}
+
+
+
+
+
+
+
